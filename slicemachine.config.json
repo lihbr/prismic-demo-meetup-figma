@@ -1,0 +1,6 @@
+{
+	"libraries": ["./slices"],
+	"repositoryName": "2306-meetup-figma",
+	"adapter": "@slicemachine/adapter-nuxt",
+	"localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}
