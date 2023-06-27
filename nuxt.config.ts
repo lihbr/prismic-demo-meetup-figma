@@ -18,9 +18,13 @@ export default defineNuxtConfig({
 		},
 	},
 
-	css: ["@fontsource-variable/libre-franklin", "@fontsource/press-start-2p"],
+	css: ["@fontsource-variable/libre-franklin", "@fontsource/carter-one"],
 
 	modules: ["@nuxtjs/prismic", "@nuxtjs/tailwindcss", "nuxt-icon"],
+
+	tailwindcss: {
+		cssPath: "~/assets/style.css",
+	},
 
 	prismic: {
 		endpoint: repositoryName,

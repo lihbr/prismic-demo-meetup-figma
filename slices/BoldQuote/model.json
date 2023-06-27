@@ -1,0 +1,100 @@
+{
+	"id": "bold_quote",
+	"type": "SharedSlice",
+	"name": "BoldQuote",
+	"description": "BoldQuote",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Title",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "heading2"
+					}
+				},
+				"quote": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Quote",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,strong,em,hyperlink"
+					}
+				},
+				"author": {
+					"type": "Text",
+					"config": { "label": "Author", "placeholder": "" }
+				},
+				"theme": {
+					"type": "Select",
+					"config": {
+						"label": "Theme",
+						"placeholder": "",
+						"options": ["Mantis", "Indigo", "Butter", "White"],
+						"default_value": "Mantis"
+					}
+				}
+			},
+			"items": {}
+		},
+		{
+			"id": "withCta",
+			"name": "With CTA",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Title",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "heading2"
+					}
+				},
+				"quote": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Quote",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,strong,em,hyperlink"
+					}
+				},
+				"author": {
+					"type": "Text",
+					"config": { "label": "Author", "placeholder": "" }
+				},
+				"theme": {
+					"type": "Select",
+					"config": {
+						"label": "Theme",
+						"placeholder": "",
+						"options": ["Mantis", "Indigo", "Butter", "White"],
+						"default_value": "Mantis"
+					}
+				},
+				"cta_label": {
+					"type": "Text",
+					"config": { "label": "CTA Label", "placeholder": "" }
+				},
+				"cta_link": {
+					"type": "Link",
+					"config": { "label": "CTA Link", "placeholder": "", "select": null }
+				}
+			},
+			"items": {}
+		}
+	]
+}

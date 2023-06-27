@@ -1,0 +1,45 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Build the most performant websites",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"placeholder": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Enter email"
+			},
+			"optin_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "I agree to opt-in to Prismic's mailing list."
+			},
+			"disclaimer": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "By clicking \"Submit\" you agree to our TOS and Privacy Policy.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

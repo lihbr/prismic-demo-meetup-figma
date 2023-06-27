@@ -1,0 +1,45 @@
+{
+	"id": "newsletter_cta",
+	"type": "SharedSlice",
+	"name": "NewsletterCta",
+	"description": "NewsletterCta",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Title",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "heading2"
+					}
+				},
+				"placeholder": {
+					"type": "Text",
+					"config": { "label": "Placeholder", "placeholder": "" }
+				},
+				"optin_label": {
+					"type": "Text",
+					"config": { "label": "Opt-in label", "placeholder": "" }
+				},
+				"disclaimer": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Disclaimer",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,strong,em,hyperlink"
+					}
+				}
+			},
+			"items": {}
+		}
+	]
+}

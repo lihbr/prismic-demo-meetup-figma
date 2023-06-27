@@ -1,0 +1,36 @@
+{
+	"id": "shouting_cta",
+	"type": "SharedSlice",
+	"name": "ShoutingCta",
+	"description": "ShoutingCta",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Title",
+						"placeholder": "",
+						"allowTargetBlank": false,
+						"single": "heading2,strong"
+					}
+				},
+				"cta_label": {
+					"type": "Text",
+					"config": { "label": "CTA Label", "placeholder": "" }
+				},
+				"cta_link": {
+					"type": "Link",
+					"config": { "label": "CTA Link", "placeholder": "", "select": null }
+				}
+			},
+			"items": {}
+		}
+	]
+}

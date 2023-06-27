@@ -1,0 +1,40 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Start building\nwith Prismic",
+							"spans": [
+								{
+									"type": "strong",
+									"start": 6,
+									"end": 14
+								}
+							]
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"cta_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Get started for free"
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io/dashboard/signup"
+				}
+			}
+		},
+		"items": []
+	}
+]

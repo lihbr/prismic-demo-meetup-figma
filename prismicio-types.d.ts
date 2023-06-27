@@ -33,7 +33,11 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice =
+	| RichTextSlice
+	| ShoutingCtaSlice
+	| NewsletterCtaSlice
+	| BoldQuoteSlice;
 /**
  * Page document from Prismic
  *
@@ -45,7 +49,386 @@ type PageDocumentDataSlicesSlice = RichTextSlice;
  */
 export type PageDocument<Lang extends string = string> =
 	prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
-export type AllDocumentTypes = PageDocument;
+/** Content for Partials documents */
+interface PartialsDocumentData {
+	/**
+	 * Nav field in *Partials*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.nav[]
+	 * - **Tab**: Header
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/group
+	 *
+	 */
+	nav: prismic.GroupField<Simplify<PartialsDocumentDataNavItem>>;
+	/**
+	 * Socials field in *Partials*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.socials[]
+	 * - **Tab**: Footer
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/group
+	 *
+	 */
+	socials: prismic.GroupField<Simplify<PartialsDocumentDataSocialsItem>>;
+	/**
+	 * Footer Nav field in *Partials*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.footer_nav[]
+	 * - **Tab**: Footer
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/group
+	 *
+	 */
+	footer_nav: prismic.GroupField<Simplify<PartialsDocumentDataFooterNavItem>>;
+}
+/**
+ * Item in Partials → Nav
+ *
+ */
+export interface PartialsDocumentDataNavItem {
+	/**
+	 * Label field in *Partials → Nav*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.nav[].label
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	label: prismic.KeyTextField;
+	/**
+	 * Link field in *Partials → Nav*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.nav[].link
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	link: prismic.LinkField;
+	/**
+	 * Display as CTA field in *Partials → Nav*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: partials.nav[].cta
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+	 *
+	 */
+	cta: prismic.BooleanField;
+}
+/**
+ * Item in Partials → Socials
+ *
+ */
+export interface PartialsDocumentDataSocialsItem {
+	/**
+	 * Label field in *Partials → Socials*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.socials[].label
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	label: prismic.KeyTextField;
+	/**
+	 * Link field in *Partials → Socials*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.socials[].link
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	link: prismic.LinkField;
+}
+/**
+ * Item in Partials → Footer Nav
+ *
+ */
+export interface PartialsDocumentDataFooterNavItem {
+	/**
+	 * Category field in *Partials → Footer Nav*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.footer_nav[].category
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	category: prismic.KeyTextField;
+	/**
+	 * Links field in *Partials → Footer Nav*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: partials.footer_nav[].links
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	links: prismic.RichTextField;
+}
+/**
+ * Partials document from Prismic
+ *
+ * - **API ID**: `partials`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PartialsDocument<Lang extends string = string> =
+	prismic.PrismicDocumentWithoutUID<
+		Simplify<PartialsDocumentData>,
+		"partials",
+		Lang
+	>;
+export type AllDocumentTypes = PageDocument | PartialsDocument;
+/**
+ * Primary content in BoldQuote → Primary
+ *
+ */
+interface BoldQuoteSliceDefaultPrimary {
+	/**
+	 * Title field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	title: prismic.TitleField;
+	/**
+	 * Quote field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.quote
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	quote: prismic.RichTextField;
+	/**
+	 * Author field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.author
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	author: prismic.KeyTextField;
+	/**
+	 * Theme field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: Mantis
+	 * - **API ID Path**: bold_quote.primary.theme
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
+	 *
+	 */
+	theme: prismic.SelectField<
+		"Mantis" | "Indigo" | "Butter" | "White",
+		"filled"
+	>;
+}
+/**
+ * Default variation for BoldQuote Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BoldQuoteSliceDefault = prismic.SharedSliceVariation<
+	"default",
+	Simplify<BoldQuoteSliceDefaultPrimary>,
+	never
+>;
+/**
+ * Primary content in BoldQuote → Primary
+ *
+ */
+interface BoldQuoteSliceWithCtaPrimary {
+	/**
+	 * Title field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	title: prismic.TitleField;
+	/**
+	 * Quote field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.quote
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	quote: prismic.RichTextField;
+	/**
+	 * Author field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.author
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	author: prismic.KeyTextField;
+	/**
+	 * Theme field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: Mantis
+	 * - **API ID Path**: bold_quote.primary.theme
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/select
+	 *
+	 */
+	theme: prismic.SelectField<
+		"Mantis" | "Indigo" | "Butter" | "White",
+		"filled"
+	>;
+	/**
+	 * CTA Label field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.cta_label
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	cta_label: prismic.KeyTextField;
+	/**
+	 * CTA Link field in *BoldQuote → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bold_quote.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	cta_link: prismic.LinkField;
+}
+/**
+ * With CTA variation for BoldQuote Slice
+ *
+ * - **API ID**: `withCta`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BoldQuoteSliceWithCta = prismic.SharedSliceVariation<
+	"withCta",
+	Simplify<BoldQuoteSliceWithCtaPrimary>,
+	never
+>;
+/**
+ * Slice variation for *BoldQuote*
+ *
+ */
+type BoldQuoteSliceVariation = BoldQuoteSliceDefault | BoldQuoteSliceWithCta;
+/**
+ * BoldQuote Shared Slice
+ *
+ * - **API ID**: `bold_quote`
+ * - **Description**: `BoldQuote`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BoldQuoteSlice = prismic.SharedSlice<
+	"bold_quote",
+	BoldQuoteSliceVariation
+>;
+/**
+ * Primary content in NewsletterCta → Primary
+ *
+ */
+interface NewsletterCtaSliceDefaultPrimary {
+	/**
+	 * Title field in *NewsletterCta → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter_cta.primary.title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	title: prismic.TitleField;
+	/**
+	 * Placeholder field in *NewsletterCta → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter_cta.primary.placeholder
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	placeholder: prismic.KeyTextField;
+	/**
+	 * Opt-in label field in *NewsletterCta → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter_cta.primary.optin_label
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	optin_label: prismic.KeyTextField;
+	/**
+	 * Disclaimer field in *NewsletterCta → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: newsletter_cta.primary.disclaimer
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	disclaimer: prismic.RichTextField;
+}
+/**
+ * Default variation for NewsletterCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NewsletterCtaSliceDefault = prismic.SharedSliceVariation<
+	"default",
+	Simplify<NewsletterCtaSliceDefaultPrimary>,
+	never
+>;
+/**
+ * Slice variation for *NewsletterCta*
+ *
+ */
+type NewsletterCtaSliceVariation = NewsletterCtaSliceDefault;
+/**
+ * NewsletterCta Shared Slice
+ *
+ * - **API ID**: `newsletter_cta`
+ * - **Description**: `NewsletterCta`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NewsletterCtaSlice = prismic.SharedSlice<
+	"newsletter_cta",
+	NewsletterCtaSliceVariation
+>;
 /**
  * Primary content in RichText → Primary
  *
@@ -92,6 +475,72 @@ export type RichTextSlice = prismic.SharedSlice<
 	"rich_text",
 	RichTextSliceVariation
 >;
+/**
+ * Primary content in ShoutingCta → Primary
+ *
+ */
+interface ShoutingCtaSliceDefaultPrimary {
+	/**
+	 * Title field in *ShoutingCta → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: shouting_cta.primary.title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	title: prismic.RichTextField;
+	/**
+	 * CTA Label field in *ShoutingCta → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: shouting_cta.primary.cta_label
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	cta_label: prismic.KeyTextField;
+	/**
+	 * CTA Link field in *ShoutingCta → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: shouting_cta.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	cta_link: prismic.LinkField;
+}
+/**
+ * Default variation for ShoutingCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ShoutingCtaSliceDefault = prismic.SharedSliceVariation<
+	"default",
+	Simplify<ShoutingCtaSliceDefaultPrimary>,
+	never
+>;
+/**
+ * Slice variation for *ShoutingCta*
+ *
+ */
+type ShoutingCtaSliceVariation = ShoutingCtaSliceDefault;
+/**
+ * ShoutingCta Shared Slice
+ *
+ * - **API ID**: `shouting_cta`
+ * - **Description**: `ShoutingCta`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ShoutingCtaSlice = prismic.SharedSlice<
+	"shouting_cta",
+	ShoutingCtaSliceVariation
+>;
 declare module "@prismicio/client" {
 	interface CreateClient {
 		(
@@ -104,11 +553,30 @@ declare module "@prismicio/client" {
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
 			PageDocument,
+			PartialsDocumentData,
+			PartialsDocumentDataNavItem,
+			PartialsDocumentDataSocialsItem,
+			PartialsDocumentDataFooterNavItem,
+			PartialsDocument,
 			AllDocumentTypes,
+			BoldQuoteSliceDefaultPrimary,
+			BoldQuoteSliceDefault,
+			BoldQuoteSliceWithCtaPrimary,
+			BoldQuoteSliceWithCta,
+			BoldQuoteSliceVariation,
+			BoldQuoteSlice,
+			NewsletterCtaSliceDefaultPrimary,
+			NewsletterCtaSliceDefault,
+			NewsletterCtaSliceVariation,
+			NewsletterCtaSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceDefault,
 			RichTextSliceVariation,
 			RichTextSlice,
+			ShoutingCtaSliceDefaultPrimary,
+			ShoutingCtaSliceDefault,
+			ShoutingCtaSliceVariation,
+			ShoutingCtaSlice,
 		};
 	}
 }

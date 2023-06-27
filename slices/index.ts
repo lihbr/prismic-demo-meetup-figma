@@ -3,5 +3,10 @@ import { defineSliceZoneComponents } from "@prismicio/vue";
 import { defineAsyncComponent } from "vue";
 
 export const components = defineSliceZoneComponents({
+	bold_quote: defineAsyncComponent(() => import("./BoldQuote/index.vue")),
+	newsletter_cta: defineAsyncComponent(
+		() => import("./NewsletterCta/index.vue"),
+	),
 	rich_text: defineAsyncComponent(() => import("./RichText/index.vue")),
+	shouting_cta: defineAsyncComponent(() => import("./ShoutingCta/index.vue")),
 });

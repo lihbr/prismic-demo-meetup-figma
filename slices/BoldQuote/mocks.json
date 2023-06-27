@@ -1,0 +1,105 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "From our clients",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"quote": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Our content team moves much quicker in deploying web pages. Slices in Prismic have taken us beyond simply templates to re-using components of templates. Ideation to deployment is faster and we're not making compromises on the quality of our branding.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Yuriy Mikitchenko, Marketing Director, Veriff"
+			},
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "Mantis",
+				"type": "Select"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withCta",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "From our clients",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"quote": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Our content team moves much quicker in deploying web pages. Slices in Prismic have taken us beyond simply templates to re-using components of templates. Ideation to deployment is faster and we're not making compromises on the quality of our branding.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Yuriy Mikitchenko, Marketing Director, Veriff"
+			},
+			"theme": {
+				"__TYPE__": "FieldContent",
+				"value": "Mantis",
+				"type": "Select"
+			},
+			"cta_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Read the article"
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io/blog/the-future-of-website-content-creation"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

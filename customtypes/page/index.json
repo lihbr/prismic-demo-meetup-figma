@@ -19,7 +19,14 @@
 			"slices": {
 				"type": "Slices",
 				"fieldset": "Slice Zone",
-				"config": { "choices": { "rich_text": { "type": "SharedSlice" } } }
+				"config": {
+					"choices": {
+						"rich_text": { "type": "SharedSlice" },
+						"shouting_cta": { "type": "SharedSlice" },
+						"newsletter_cta": { "type": "SharedSlice" },
+						"bold_quote": { "type": "SharedSlice" }
+					}
+				}
 			}
 		}
 	}

@@ -19,7 +19,7 @@ module.exports = {
 			},
 		],
 		"@typescript-eslint/no-var-requires": "off",
-		"@typescript-eslint/explicit-module-boundary-types": "error",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"vue/multi-word-component-names": "off",
 	},
 };

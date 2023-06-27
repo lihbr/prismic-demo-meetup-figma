@@ -6,7 +6,16 @@ const config: Partial<Config> = {
 		fontFamily: {
 			sans: '"Libre Franklin Variable", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
 			display:
-				'"Press Start 2P", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+				'"Carter One", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+		},
+		colors: {
+			none: "none",
+			transparent: "transparent",
+			black: "rgb(0, 0, 0)",
+			white: "rgb(255, 255, 255)",
+			indigo: "rgb(85, 81, 255)",
+			mantis: "rgb(15, 169, 88)",
+			butter: "rgb(249, 215, 98)",
 		},
 	},
 };
