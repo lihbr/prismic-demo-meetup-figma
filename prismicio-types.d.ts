@@ -37,7 +37,9 @@ type PageDocumentDataSlicesSlice =
 	| RichTextSlice
 	| ShoutingCtaSlice
 	| NewsletterCtaSlice
-	| BoldQuoteSlice;
+	| BoldQuoteSlice
+	| HeroAssetSlice
+	| TextAssetSlice;
 /**
  * Page document from Prismic
  *
@@ -354,6 +356,82 @@ export type BoldQuoteSlice = prismic.SharedSlice<
 	BoldQuoteSliceVariation
 >;
 /**
+ * Primary content in HeroAsset → Primary
+ *
+ */
+interface HeroAssetSliceDefaultPrimary {
+	/**
+	 * Title field in *HeroAsset → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero_asset.primary.title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	title: prismic.RichTextField;
+	/**
+	 * CTA Label field in *HeroAsset → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero_asset.primary.cta_label
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	cta_label: prismic.KeyTextField;
+	/**
+	 * CTA Link field in *HeroAsset → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero_asset.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	cta_link: prismic.LinkField;
+	/**
+	 * Image field in *HeroAsset → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero_asset.primary.image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	image: prismic.ImageField<never>;
+}
+/**
+ * Default variation for HeroAsset Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroAssetSliceDefault = prismic.SharedSliceVariation<
+	"default",
+	Simplify<HeroAssetSliceDefaultPrimary>,
+	never
+>;
+/**
+ * Slice variation for *HeroAsset*
+ *
+ */
+type HeroAssetSliceVariation = HeroAssetSliceDefault;
+/**
+ * HeroAsset Shared Slice
+ *
+ * - **API ID**: `hero_asset`
+ * - **Description**: `HeroAsset`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroAssetSlice = prismic.SharedSlice<
+	"hero_asset",
+	HeroAssetSliceVariation
+>;
+/**
  * Primary content in NewsletterCta → Primary
  *
  */
@@ -541,6 +619,102 @@ export type ShoutingCtaSlice = prismic.SharedSlice<
 	"shouting_cta",
 	ShoutingCtaSliceVariation
 >;
+/**
+ * Primary content in TextAsset → Primary
+ *
+ */
+interface TextAssetSliceDefaultPrimary {
+	/**
+	 * Category field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text_asset.primary.category
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	category: prismic.KeyTextField;
+	/**
+	 * Title field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text_asset.primary.title
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	title: prismic.TitleField;
+	/**
+	 * Description field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text_asset.primary.description
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+	 *
+	 */
+	description: prismic.RichTextField;
+	/**
+	 * CTA Label field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text_asset.primary.cta_label
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+	 *
+	 */
+	cta_label: prismic.KeyTextField;
+	/**
+	 * CTA Link field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text_asset.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+	 *
+	 */
+	cta_link: prismic.LinkField;
+	/**
+	 * Image field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text_asset.primary.image
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/image
+	 *
+	 */
+	image: prismic.ImageField<never>;
+}
+/**
+ * Default variation for TextAsset Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextAssetSliceDefault = prismic.SharedSliceVariation<
+	"default",
+	Simplify<TextAssetSliceDefaultPrimary>,
+	never
+>;
+/**
+ * Slice variation for *TextAsset*
+ *
+ */
+type TextAssetSliceVariation = TextAssetSliceDefault;
+/**
+ * TextAsset Shared Slice
+ *
+ * - **API ID**: `text_asset`
+ * - **Description**: `TextAsset`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextAssetSlice = prismic.SharedSlice<
+	"text_asset",
+	TextAssetSliceVariation
+>;
 declare module "@prismicio/client" {
 	interface CreateClient {
 		(
@@ -565,6 +739,10 @@ declare module "@prismicio/client" {
 			BoldQuoteSliceWithCta,
 			BoldQuoteSliceVariation,
 			BoldQuoteSlice,
+			HeroAssetSliceDefaultPrimary,
+			HeroAssetSliceDefault,
+			HeroAssetSliceVariation,
+			HeroAssetSlice,
 			NewsletterCtaSliceDefaultPrimary,
 			NewsletterCtaSliceDefault,
 			NewsletterCtaSliceVariation,
@@ -577,6 +755,10 @@ declare module "@prismicio/client" {
 			ShoutingCtaSliceDefault,
 			ShoutingCtaSliceVariation,
 			ShoutingCtaSlice,
+			TextAssetSliceDefaultPrimary,
+			TextAssetSliceDefault,
+			TextAssetSliceVariation,
+			TextAssetSlice,
 		};
 	}
 }

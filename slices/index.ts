@@ -4,9 +4,11 @@ import { defineAsyncComponent } from "vue";
 
 export const components = defineSliceZoneComponents({
 	bold_quote: defineAsyncComponent(() => import("./BoldQuote/index.vue")),
+	hero_asset: defineAsyncComponent(() => import("./HeroAsset/index.vue")),
 	newsletter_cta: defineAsyncComponent(
 		() => import("./NewsletterCta/index.vue"),
 	),
 	rich_text: defineAsyncComponent(() => import("./RichText/index.vue")),
 	shouting_cta: defineAsyncComponent(() => import("./ShoutingCta/index.vue")),
+	text_asset: defineAsyncComponent(() => import("./TextAsset/index.vue")),
 });

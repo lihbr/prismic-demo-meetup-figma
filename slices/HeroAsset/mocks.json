@@ -1,0 +1,57 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withImage",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Build a website that keeps getting better",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"cta_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Get started"
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io/dashboard/signup"
+				}
+			},
+			"image": {
+				"origin": {
+					"id": "-hI5dX2ObAs",
+					"url": "https://images.unsplash.com/photo-1462332420958-a05d1e002413?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8c3BhY2V8ZW58MHx8fHwxNjg3ODg0NzczfDA&ixlib=rb-4.0.3&q=85",
+					"width": 5200,
+					"height": 2500
+				},
+				"url": "https://images.unsplash.com/photo-1462332420958-a05d1e002413?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8c3BhY2V8ZW58MHx8fHwxNjg3ODg0NzczfDA&ixlib=rb-4.0.3&q=85",
+				"width": 5200,
+				"height": 2500,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

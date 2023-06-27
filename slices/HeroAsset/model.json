@@ -1,0 +1,51 @@
+{
+	"id": "hero_asset",
+	"type": "SharedSlice",
+	"name": "HeroAsset",
+	"description": "HeroAsset",
+	"variations": [
+		{
+			"id": "withImage",
+			"name": "With image",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Title",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "heading1,strong,em"
+					}
+				},
+				"cta_label": {
+					"type": "Text",
+					"config": {
+						"label": "CTA Label",
+						"placeholder": ""
+					}
+				},
+				"cta_link": {
+					"type": "Link",
+					"config": {
+						"label": "CTA Link",
+						"placeholder": "",
+						"select": null
+					}
+				},
+				"image": {
+					"type": "Image",
+					"config": {
+						"label": "Image",
+						"constraint": {},
+						"thumbnails": []
+					}
+				}
+			},
+			"items": {}
+		}
+	]
+}

@@ -24,7 +24,9 @@
 						"rich_text": { "type": "SharedSlice" },
 						"shouting_cta": { "type": "SharedSlice" },
 						"newsletter_cta": { "type": "SharedSlice" },
-						"bold_quote": { "type": "SharedSlice" }
+						"bold_quote": { "type": "SharedSlice" },
+						"hero_asset": { "type": "SharedSlice" },
+						"text_asset": { "type": "SharedSlice" }
 					}
 				}
 			}
