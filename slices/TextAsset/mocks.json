@@ -5,8 +5,8 @@
 		"primary": {
 			"category": {
 				"__TYPE__": "FieldContent",
-				"value": "source",
-				"type": "Text"
+				"type": "Text",
+				"value": "Build"
 			},
 			"title": {
 				"__TYPE__": "StructuredTextContent",
@@ -14,8 +14,10 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Track"
-						}
+							"text": "Developers set the foundation",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -25,43 +27,56 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Lorem et labore tempor et."
-						}
+							"text": "Developers use modern web technologies to build components locally, setting the foundation for optimal performance and consistent design.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
-			},
-			"cta_label": {
-				"__TYPE__": "FieldContent",
-				"value": "fully",
-				"type": "Text"
 			},
 			"cta_link": {
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev"
+					"url": "https://prismic.io/developers"
 				}
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
-					"width": 3500,
-					"height": 2338
+					"id": "vpOeXr5wmR4",
+					"url": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxjb2RlfGVufDB8fHx8MTY4Nzk0MjQ1Mnww&ixlib=rb-4.0.3&q=85",
+					"width": 6000,
+					"height": 3376
 				},
-				"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
-				"width": 3500,
-				"height": 2338,
+				"url": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw1fHxjb2RlfGVufDB8fHx8MTY4Nzk0MjQ1Mnww&ixlib=rb-4.0.3&q=85",
+				"width": 6000,
+				"height": 3376,
 				"edit": {
+					"background": "transparent",
 					"zoom": 1,
 					"crop": {
 						"x": 0,
 						"y": 0
-					},
-					"background": "transparent"
+					}
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"type": "Color",
+				"value": "#FAFD5D"
+			},
+			"cta_label": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Discover Slice Machine"
+			},
+			"inverted": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

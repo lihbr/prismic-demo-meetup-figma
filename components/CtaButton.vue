@@ -4,7 +4,7 @@ import { LinkField } from "@prismicio/client";
 defineProps<{
 	link: LinkField;
 	size?: "m" | "l" | "xl";
-	theme?: "transparent";
+	theme?: "transparent" | "monochrome";
 }>();
 </script>
 
@@ -17,6 +17,7 @@ defineProps<{
 			'text-[28px] rounded-[12px] pt-[19px] pb-[21px] px-9': size === 'l',
 			'text-5xl rounded-[10px] pt-[23px] pb-[27px] px-12': size === 'xl',
 			'bg-indigo text-white': !theme,
+			'bg-black text-white': theme === 'monochrome',
 			border: theme === 'transparent',
 		}"
 	>

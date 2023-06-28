@@ -14,10 +14,7 @@
 			"primary": {
 				"category": {
 					"type": "Text",
-					"config": {
-						"label": "Category",
-						"placeholder": ""
-					}
+					"config": { "label": "Category", "placeholder": "" }
 				},
 				"title": {
 					"type": "StructuredText",
@@ -39,25 +36,27 @@
 				},
 				"cta_label": {
 					"type": "Text",
-					"config": {
-						"label": "CTA Label",
-						"placeholder": ""
-					}
+					"config": { "label": "CTA Label", "placeholder": "" }
 				},
 				"cta_link": {
 					"type": "Link",
-					"config": {
-						"label": "CTA Link",
-						"placeholder": "",
-						"select": null
-					}
+					"config": { "label": "CTA Link", "placeholder": "", "select": null }
 				},
 				"image": {
 					"type": "Image",
+					"config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+				},
+				"background_color": {
+					"type": "Color",
+					"config": { "label": "Background Color", "placeholder": "" }
+				},
+				"inverted": {
+					"type": "Boolean",
 					"config": {
-						"label": "Image",
-						"constraint": {},
-						"thumbnails": []
+						"label": "Invert Layout",
+						"placeholder_false": "False",
+						"placeholder_true": "True",
+						"default_value": false
 					}
 				}
 			},

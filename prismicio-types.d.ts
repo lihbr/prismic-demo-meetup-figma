@@ -359,7 +359,7 @@ export type BoldQuoteSlice = prismic.SharedSlice<
  * Primary content in HeroAsset → Primary
  *
  */
-interface HeroAssetSliceDefaultPrimary {
+interface HeroAssetSliceWithImagePrimary {
 	/**
 	 * Title field in *HeroAsset → Primary*
 	 *
@@ -402,23 +402,23 @@ interface HeroAssetSliceDefaultPrimary {
 	image: prismic.ImageField<never>;
 }
 /**
- * Default variation for HeroAsset Slice
+ * With image variation for HeroAsset Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `withImage`
  * - **Description**: `Default`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type HeroAssetSliceDefault = prismic.SharedSliceVariation<
-	"default",
-	Simplify<HeroAssetSliceDefaultPrimary>,
+export type HeroAssetSliceWithImage = prismic.SharedSliceVariation<
+	"withImage",
+	Simplify<HeroAssetSliceWithImagePrimary>,
 	never
 >;
 /**
  * Slice variation for *HeroAsset*
  *
  */
-type HeroAssetSliceVariation = HeroAssetSliceDefault;
+type HeroAssetSliceVariation = HeroAssetSliceWithImage;
 /**
  * HeroAsset Shared Slice
  *
@@ -623,7 +623,7 @@ export type ShoutingCtaSlice = prismic.SharedSlice<
  * Primary content in TextAsset → Primary
  *
  */
-interface TextAssetSliceDefaultPrimary {
+interface TextAssetSliceWithImagePrimary {
 	/**
 	 * Category field in *TextAsset → Primary*
 	 *
@@ -684,25 +684,46 @@ interface TextAssetSliceDefaultPrimary {
 	 *
 	 */
 	image: prismic.ImageField<never>;
+	/**
+	 * Background Color field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: text_asset.primary.background_color
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/color
+	 *
+	 */
+	background_color: prismic.ColorField;
+	/**
+	 * Invert Layout field in *TextAsset → Primary*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: text_asset.primary.inverted
+	 * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+	 *
+	 */
+	inverted: prismic.BooleanField;
 }
 /**
- * Default variation for TextAsset Slice
+ * With image variation for TextAsset Slice
  *
- * - **API ID**: `default`
+ * - **API ID**: `withImage`
  * - **Description**: `Default`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TextAssetSliceDefault = prismic.SharedSliceVariation<
-	"default",
-	Simplify<TextAssetSliceDefaultPrimary>,
+export type TextAssetSliceWithImage = prismic.SharedSliceVariation<
+	"withImage",
+	Simplify<TextAssetSliceWithImagePrimary>,
 	never
 >;
 /**
  * Slice variation for *TextAsset*
  *
  */
-type TextAssetSliceVariation = TextAssetSliceDefault;
+type TextAssetSliceVariation = TextAssetSliceWithImage;
 /**
  * TextAsset Shared Slice
  *
@@ -739,8 +760,8 @@ declare module "@prismicio/client" {
 			BoldQuoteSliceWithCta,
 			BoldQuoteSliceVariation,
 			BoldQuoteSlice,
-			HeroAssetSliceDefaultPrimary,
-			HeroAssetSliceDefault,
+			HeroAssetSliceWithImagePrimary,
+			HeroAssetSliceWithImage,
 			HeroAssetSliceVariation,
 			HeroAssetSlice,
 			NewsletterCtaSliceDefaultPrimary,
@@ -755,8 +776,8 @@ declare module "@prismicio/client" {
 			ShoutingCtaSliceDefault,
 			ShoutingCtaSliceVariation,
 			ShoutingCtaSlice,
-			TextAssetSliceDefaultPrimary,
-			TextAssetSliceDefault,
+			TextAssetSliceWithImagePrimary,
+			TextAssetSliceWithImage,
 			TextAssetSliceVariation,
 			TextAssetSlice,
 		};
