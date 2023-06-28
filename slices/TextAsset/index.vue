@@ -75,7 +75,7 @@ const resolvedBackground = useResolvedBackground(
 		<div
 			class="mx-auto max-w-screen-2xl flex-col sm:flex-row flex gap-[60px]"
 			:class="{
-				'flex-row-reverse': slice.primary.inverted,
+				'sm:flex-row-reverse': slice.primary.inverted,
 			}"
 			:style="{
 				[slice.primary.inverted ? 'paddingRight' : 'paddingLeft']:
