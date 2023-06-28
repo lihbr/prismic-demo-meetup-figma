@@ -5,7 +5,7 @@ const partials = usePartials();
 <template>
 	<header class="py-6 px-6 lg:px-12 lg:flex justify-between items-center">
 		<NuxtLink to="/">
-			<Icon name="logos:prismic-icon" class="w-auto h-[58px]" />
+			<Icon name="logos:figma" class="w-auto h-[58px]" />
 		</NuxtLink>
 		<nav class="mt-6 lg:mt-0">
 			<ul class="lg:flex items-center">

@@ -91,7 +91,9 @@ const resolvedBackground = useResolvedBackground(
 					{{ slice.primary.cta_label }}
 				</CtaButton>
 			</div>
-			<figure class="flex-1 overflow-hidden rounded-t-xl">
+			<figure
+				class="flex-1 overflow-hidden rounded-t-xl border border-black/70 border-b-0"
+			>
 				<PrismicImage :field="slice.primary.image" />
 			</figure>
 		</div>
