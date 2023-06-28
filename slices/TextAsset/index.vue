@@ -15,7 +15,7 @@ const props = defineProps(
 
 const serializer: HTMLRichTextSerializer = {
 	heading2: ({ children }) =>
-		/* html */ `<h2 class="text-[80px] leading-[88px] font-medium">${children}</h2>`,
+		/* html */ `<h2 class="heading-1 font-medium">${children}</h2>`,
 };
 
 const $slice = ref<VNodeRef>();
@@ -73,7 +73,7 @@ const resolvedBackground = useResolvedBackground(
 			<PrismicRichText :field="slice.primary.title" :serializer="serializer" />
 		</header>
 		<div
-			class="mx-auto max-w-screen-2xl flex gap-[60px]"
+			class="mx-auto max-w-screen-2xl flex-col sm:flex-row flex gap-[60px]"
 			:class="{
 				'flex-row-reverse': slice.primary.inverted,
 			}"

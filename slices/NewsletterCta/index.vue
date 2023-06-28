@@ -14,7 +14,7 @@ defineProps(
 
 const serializer: HTMLRichTextSerializer = {
 	heading2: ({ children }) =>
-		/* html */ `<h2 class="text-[56px] leading-[1.125] font-bold">${children}</h2>`,
+		/* html */ `<h2 class="text-4xl xl:text-[56px] leading-[1.125] font-bold">${children}</h2>`,
 };
 </script>
 
@@ -32,7 +32,7 @@ const serializer: HTMLRichTextSerializer = {
 						type="email"
 						:placeholder="slice.primary.placeholder ?? ''"
 						required
-						class="bg-transparent text-[56px] leading-[1.125] font-bold placeholder-black/50 focus:outline-none w-full"
+						class="bg-transparent text-4xl xl:text-[56px] leading-[1.125] font-bold placeholder-black/50 focus:outline-none w-full"
 					/>
 					<button
 						type="submit"
@@ -40,7 +40,7 @@ const serializer: HTMLRichTextSerializer = {
 					>
 						<Icon
 							name="ic:baseline-subdirectory-arrow-right"
-							class="h-[56px] w-[56px]"
+							class="h-[36px] w-[36px] xl:h-[56px] sm:w-[56px]"
 						/>
 					</button>
 				</div>

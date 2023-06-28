@@ -24,7 +24,7 @@ const serializer: HTMLRichTextSerializer = {
 	<footer
 		class="bg-black text-white flex flex-wrap justify-center text-sm py-[120px] px-6 gap-x-6 gap-y-24"
 	>
-		<section class="w-[216px]">
+		<section class="w-1/3 xl:w-[216px]">
 			<h2 class="mb-4 font-bold">Prismic</h2>
 			<ul class="space-y-4">
 				<li v-for="social in partials?.data.socials" :key="social.label ?? ''">
@@ -41,7 +41,7 @@ const serializer: HTMLRichTextSerializer = {
 		<section
 			v-for="nav in partials?.data.footer_nav"
 			:key="nav.category ?? ''"
-			class="w-[216px] nav"
+			class="w-1/3 xl:w-[216px] nav"
 		>
 			<h2 class="mb-4 font-bold">{{ nav.category }}</h2>
 			<PrismicRichText :field="nav.links" :serializer="serializer" />

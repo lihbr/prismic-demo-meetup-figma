@@ -39,7 +39,7 @@ const theme = computed(() => {
 				<PrismicRichText
 					:field="slice.primary.quote"
 					wrapper="blockquote"
-					class="mb-10 font-display text-5xl leading-[1.125] before:content-['“_'] after:content-['_”']"
+					class="mb-10 font-display text-3xl sm:text-4xl xl:text-5xl leading-[1.125] before:content-['“_'] after:content-['_”']"
 				/>
 				<figcaption class="font-semibold">
 					{{ slice.primary.author }}

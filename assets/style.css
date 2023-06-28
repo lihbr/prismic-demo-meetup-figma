@@ -46,3 +46,7 @@ a:focus-visible, button:focus-visible {
 .bounded {
 	@apply mx-auto max-w-screen-xl;
 }
+
+.heading-1 {
+	@apply text-[48px] sm:text-[64px] leading-[1.1] xl:text-[80px];
+}

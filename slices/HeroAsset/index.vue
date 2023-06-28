@@ -14,7 +14,7 @@ defineProps(
 
 const serializer: HTMLRichTextSerializer = {
 	heading1: ({ children }) =>
-		/* html */ `<h1 class="text-[80px] leading-[88px] font-medium">${children}</h1>`,
+		/* html */ `<h1 class="heading-1 font-medium">${children}</h1>`,
 };
 </script>
 
