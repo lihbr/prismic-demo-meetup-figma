@@ -17,7 +17,6 @@ const resolvedBackground = computed(() => {
 				slice.visibility === Math.max(...arr.map((slice) => slice.visibility)),
 		)
 		.map((slice, _, arr) => {
-			console.log(arr);
 			const opacity =
 				arr.length === 1
 					? 255
