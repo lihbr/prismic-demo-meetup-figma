@@ -3,7 +3,7 @@
 A demo website showcasing new Prismic features during [June 2023 Product Meetup](https://www.youtube.com/watch?v=4k5K6qB6poA).
 
 - [✨ &nbsp;Try Prismic](https://prismic.io/dashboard/signup?redirectUri=/dashboard/new-repository?plan=personal&source=pricingPage)
-- [📚 &nbsp;Prismic Nuxt documentation](hhttps://prismic.io/docs/nuxt3)
+- [📚 &nbsp;Prismic Nuxt documentation](https://prismic.io/docs/nuxt3)
 - [💚 &nbsp;Prismic Nuxt Module](https://prismic.nuxtjs.org)
 
 ## Setup
