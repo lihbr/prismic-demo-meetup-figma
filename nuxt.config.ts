@@ -15,6 +15,13 @@ export default defineNuxtConfig({
 				{ name: "format-detection", content: "telephone=no" },
 			],
 			link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+			script: [
+				{
+					src: "https://prismic-toolbar-iframe-fix.netlify.app/prismic-toolbar/4.0.9/prismic.js?repo=2306-meetup-figma&new=true",
+					async: true,
+					defer: true,
+				},
+			],
 		},
 	},
 
@@ -28,6 +35,7 @@ export default defineNuxtConfig({
 
 	prismic: {
 		endpoint: repositoryName,
+		toolbar: false,
 		preview: "/api/preview",
 		clientConfig: {
 			routes: [
