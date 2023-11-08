@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { HTMLRichTextSerializer, KeyTextField } from "@prismicio/client";
+import type { HTMLRichTextSerializer, KeyTextField } from "@prismicio/client";
 
 const partials = usePartials();
 
